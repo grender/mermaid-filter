@@ -16,9 +16,9 @@ function mermaid(type, value, format, meta) {
     var attrs = value[0],
         content = value[1];
     var classes = attrs[1];
-    var options = {width: '500', format: 'png', loc: 'inline'};
+    var options = {width: '1000', format: 'png', loc: 'inline'};
 
-    if (classes.indexOf('mermaid') < 0) return null;
+    if (!(content.indexOf('sequenceDiagram') == 0 || content.indexOf('graph LR') == 0 || content.indexOf('graph TD') == 0 )) return null;
 
     counter++;
     // console.log(attrs, content);
